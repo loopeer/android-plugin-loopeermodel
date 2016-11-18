@@ -3,6 +3,7 @@ package com.loopeer.android.plugin.loopeermodel.utils;
 
 import com.loopeer.android.plugin.loopeermodel.Settings;
 import com.loopeer.android.plugin.loopeermodel.model.VariableEntity;
+import org.apache.http.util.TextUtils;
 
 import java.util.ArrayList;
 
@@ -73,8 +74,10 @@ public final class FormatUtils {
     }
 
     public static boolean isContentValid(String content) {
+        if(TextUtils.isEmpty(content)) return false;
         content = formatContent(content);
         String[] lines = content.split("\\n");
+        if(lines.length == 0) return false;
         String head = lines[0];
         int start = hasHeader(head) ? 1 : 0;
         for (int i = start; i < lines.length; i++) {

@@ -62,6 +62,11 @@ public class FormatDialog extends JFrame {
 
 
     private void onFormat() {
+        if (!FormatUtils.isContentValid(mTextContent.getText())) {
+            mErrorLabel.setText("data error!");
+            NotificationUtils.showErrorNotification(mProject, "data error!");
+            return;
+        }
         mTextContent.setText(FormatUtils.formatContent(mTextContent.getText()));
     }
 
@@ -75,6 +80,7 @@ public class FormatDialog extends JFrame {
         ArrayList<VariableEntity> entities = generateVariables(content);
         dispose();
         new DataWriter(mFile, mClz, "generate model", entities).execute();
+        reset();
     }
 
     private ArrayList<VariableEntity> generateVariables(String content) {
@@ -92,6 +98,12 @@ public class FormatDialog extends JFrame {
         return entities;
 
     }
+
+    private void reset() {
+        mTextContent.setText("");
+        mErrorLabel.setText("");
+    }
+
 
     private void onCancel() {
         dispose();
