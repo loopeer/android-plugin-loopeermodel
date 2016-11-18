@@ -56,6 +56,9 @@ public class DataWriter extends WriteCommandAction.Simple {
             variable.append(" ");
             variable.append(entity.formatName);
             variable.append(";");
+            variable.append(" ");
+            variable.append("//");
+            variable.append(entity.note);
             mClass.add(mFactory.createFieldFromText(variable.toString(), mClass));
         }
     }

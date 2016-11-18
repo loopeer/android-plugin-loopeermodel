@@ -34,6 +34,7 @@ public final class FormatUtils {
         entity.formatName = formatVariable(s[0]);
         entity.modifier = Settings.getModifierText();
         entity.type = "String";
+        entity.note = s[1];
         return entity;
     }
 
