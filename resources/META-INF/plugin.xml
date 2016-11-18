@@ -1,40 +1,41 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>loopeer model format</name>
+    <version>0.1</version>
+    <vendor email="liuzizhang@loopeer.com" url="https://github.com/loopeer/android-plugin-loopeermodel">loopeer</vendor>
 
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+    <description><![CDATA[
+      an Android Studio plugin for generating model using loopeer data dictionary.<br>
     ]]></description>
 
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+    <change-notes><![CDATA[
+       <b>0.1</b> (11/18/2016)
+       <ul>
+        <li>Initial release</li>
+       </ul>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="141.0"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <extensions defaultExtensionNs="com.intellij">
-    <applicationConfigurable instance="com.loopeer.android.plugin.loopeermodel.Settings"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable instance="com.loopeer.android.plugin.loopeermodel.Settings"/>
+    </extensions>
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="DicFormat.MainAction" class="com.loopeer.android.plugin.loopeermodel.MainAction" text="Loopeer"
-            description="format loopeer data dictionary">
-      <add-to-group group-id="GenerateGroup" anchor="last"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="alt L"/>
-    </action>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="DicFormat.MainAction" class="com.loopeer.android.plugin.loopeermodel.MainAction" text="Loopeer"
+                description="format loopeer data dictionary">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt L"/>
+        </action>
+    </actions>
 
 </idea-plugin>

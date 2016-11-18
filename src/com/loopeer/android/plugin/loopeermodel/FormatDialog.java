@@ -8,6 +8,7 @@ import com.intellij.psi.impl.source.PsiJavaFileImpl;
 import com.loopeer.android.plugin.loopeermodel.model.VariableEntity;
 import com.loopeer.android.plugin.loopeermodel.utils.FormatUtils;
 import com.loopeer.android.plugin.loopeermodel.utils.NotificationUtils;
+import org.apache.http.util.TextUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,6 +63,7 @@ public class FormatDialog extends JFrame {
 
 
     private void onFormat() {
+        if(!checkValid()) return;
         if (!FormatUtils.isContentValid(mTextContent.getText())) {
             mErrorLabel.setText("data error!");
             NotificationUtils.showErrorNotification(mProject, "data error!");
@@ -71,13 +73,8 @@ public class FormatDialog extends JFrame {
     }
 
     private void onOk() {
-        String content = mTextContent.getText();
-        if (!FormatUtils.isContentValid(content)) {
-            mErrorLabel.setText("data error!");
-            NotificationUtils.showErrorNotification(mProject, "data error!");
-            return;
-        }
-        ArrayList<VariableEntity> entities = generateVariables(content);
+        if(!checkValid()) return;
+        ArrayList<VariableEntity> entities = generateVariables(mTextContent.getText());
         dispose();
         new DataWriter(mFile, mClz, "generate model", entities).execute();
         reset();
@@ -98,6 +95,22 @@ public class FormatDialog extends JFrame {
         return entities;
 
     }
+
+    private boolean checkValid(){
+        String content = mTextContent.getText();
+
+        if(TextUtils.isEmpty(content)) {
+            mErrorLabel.setText("empty content!");
+            return false;
+        }
+        if (!FormatUtils.isContentValid(content)) {
+            mErrorLabel.setText("data error!");
+            NotificationUtils.showErrorNotification(mProject, "data error!");
+            return false;
+        }
+        return true;
+    }
+
 
     private void reset() {
         mTextContent.setText("");

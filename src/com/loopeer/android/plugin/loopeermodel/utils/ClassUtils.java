@@ -2,7 +2,6 @@ package com.loopeer.android.plugin.loopeermodel.utils;
 
 
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.impl.source.PsiJavaFileImpl;
 
 public class ClassUtils {
 
