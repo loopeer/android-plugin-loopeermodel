@@ -1,5 +1,7 @@
 # android-plugin-loopeermodel
+
 an Android Studio plugin for generating model using data dictionary provided by the server developer
+
 #### define a data struct below:
 ```
  ClassName [classname]
