@@ -53,6 +53,7 @@ public final class FormatUtils {
     }
 
     public static String formatContent(String content) {
+        content = trimContent(content);
         String[] lines = content.split("\\n");
         int start = hasHeader(lines[0]) ? 1 : 0;
         if (start == 1) {
@@ -90,12 +91,16 @@ public final class FormatUtils {
         return line.contains("：") && line.split("：").length == 2;
     }
 
+    private static String trimContent(String content) {
+        content = content.trim();
+        return Array2WrapString(content.split("\n"));
+    }
 
 
     private static String Array2WrapString(String[] array) {
         StringBuilder sb = new StringBuilder();
         for (String s : array) {
-            if(!TextUtils.isEmpty(s)) {
+            if (!TextUtils.isEmpty(s)) {
                 sb.append(s);
                 sb.append("\n");
             }
