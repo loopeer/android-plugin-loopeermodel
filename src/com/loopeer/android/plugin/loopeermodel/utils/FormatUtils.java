@@ -13,6 +13,7 @@ public final class FormatUtils {
 
 
     public static ArrayList<VariableEntity> generateContent(String content) {
+        content = formatContent(content);
         ArrayList<VariableEntity> entities = new ArrayList<>();
         String[] lines = content.split("\\n");
         int start = hasHeader(lines[0]) ? 1 : 0;
