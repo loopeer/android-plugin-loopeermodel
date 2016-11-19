@@ -14,11 +14,22 @@ import com.loopeer.android.plugin.loopeermodel.model.VariableEntity;
 import java.util.ArrayList;
 
 public class DataWriter extends WriteCommandAction.Simple {
+
+    public interface OnCommandFinishListener{
+        void onFinish();
+    }
+
     private Project mProject;
     private PsiFile mFile;
     private PsiClass mClass;
     private PsiElementFactory mFactory;
     private ArrayList<VariableEntity> mEntities;
+    private OnCommandFinishListener mListener;
+
+    public void setCommandFinishListener(OnCommandFinishListener listener){
+        mListener = listener;
+    }
+
 
     protected DataWriter(PsiFile file, PsiClass clazz, String commandName, ArrayList<VariableEntity> entities) {
         super(clazz.getProject(), commandName);
@@ -41,6 +52,8 @@ public class DataWriter extends WriteCommandAction.Simple {
         styleManager.shortenClassReferences(mClass);
         //reformat
         new ReformatCodeProcessor(mProject, mClass.getContainingFile(), null, false).runWithoutProgress();
+
+        if(mListener != null) mListener.onFinish();
     }
 
 

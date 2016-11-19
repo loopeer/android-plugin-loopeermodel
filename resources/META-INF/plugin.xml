@@ -1,5 +1,5 @@
 <idea-plugin version="2">
-    <id>com.your.company.unique.plugin.id</id>
+    <id>loopeer</id>
     <name>loopeer model format</name>
     <version>0.1</version>
     <vendor email="liuzizhang@loopeer.com" url="https://github.com/loopeer/android-plugin-loopeermodel">loopeer</vendor>

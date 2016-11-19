@@ -39,23 +39,16 @@ public final class FormatUtils {
     }
 
     private static String formatVariable(String var) {
-        StringBuilder sb = new StringBuilder(var);
-        boolean isFormat = true;
-        int index = 0;
-        for (int i = 0; i < var.length(); i++) {
-            if (var.charAt(i) == '_') {
-                index = i;
-                isFormat = false;
-                break;
-            }
+        String[] vars = var.split("_");
+        if (var.length() == 0) return var;
+        StringBuilder sb = new StringBuilder();
+        sb.append(vars[0]);
+        for (int i = 1; i < vars.length; i++) {
+            char first = vars[i].charAt(0);
+            sb.append(Character.toUpperCase(first));
+            sb.append(vars[i].substring(1));
         }
-        char c = var.charAt(index + 1);
-        if (!isFormat && Character.isLowerCase(c)) {
-            sb.replace(index, index + 2, String.valueOf(Character.toUpperCase(c)));
-            return sb.toString();
-        } else {
-            return var;
-        }
+        return sb.toString();
     }
 
     public static String formatContent(String content) {
@@ -75,10 +68,10 @@ public final class FormatUtils {
     }
 
     public static boolean isContentValid(String content) {
-        if(TextUtils.isEmpty(content)) return false;
         content = formatContent(content);
+        if (TextUtils.isEmpty(content)) return false;
         String[] lines = content.split("\\n");
-        if(lines.length == 0) return false;
+        if (lines.length == 0) return false;
         String head = lines[0];
         int start = hasHeader(head) ? 1 : 0;
         for (int i = start; i < lines.length; i++) {
@@ -97,11 +90,14 @@ public final class FormatUtils {
     }
 
 
+
     private static String Array2WrapString(String[] array) {
         StringBuilder sb = new StringBuilder();
         for (String s : array) {
-            sb.append(s);
-            sb.append("\n");
+            if(!TextUtils.isEmpty(s)) {
+                sb.append(s);
+                sb.append("\n");
+            }
         }
         return sb.toString();
     }

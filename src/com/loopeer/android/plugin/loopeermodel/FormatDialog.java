@@ -70,14 +70,18 @@ public class FormatDialog extends JFrame {
             return;
         }
         mTextContent.setText(FormatUtils.formatContent(mTextContent.getText()));
+        mErrorLabel.setText("");
     }
 
     private void onOk() {
         if(!checkValid()) return;
         ArrayList<VariableEntity> entities = generateVariables(mTextContent.getText());
-        dispose();
-        new DataWriter(mFile, mClz, "generate model", entities).execute();
-        reset();
+        DataWriter writer = new DataWriter(mFile, mClz, "generate model", entities);
+        writer.setCommandFinishListener(() -> {
+            reset();
+            onCancel();
+        });
+        writer.execute();
     }
 
     private ArrayList<VariableEntity> generateVariables(String content) {
