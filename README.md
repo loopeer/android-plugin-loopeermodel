@@ -23,8 +23,8 @@ eg.
 #####1.control/comand + n call generate , and choose Loopeer Model (hot key: alt + L).  
 ![](/screenshot/screen-shot-1.png)  
 #####2.paste data dictionary text into the edit box.  
-#####3.press confirm.  
 ![](/screenshot/screen-shot-2.png)  
+#####3.press confirm.  
 ![](/screenshot/screen-shot-3.png)  
 
 ####Todo-List
