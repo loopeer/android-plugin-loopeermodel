@@ -1,6 +1,6 @@
 <idea-plugin version="2">
     <id>loopeer</id>
-    <name>loopeer model format</name>
+    <name>Loopeer Model Format</name>
     <version>0.1</version>
     <vendor email="liuzizhang@loopeer.com" url="https://github.com/loopeer/android-plugin-loopeermodel">loopeer</vendor>
 
