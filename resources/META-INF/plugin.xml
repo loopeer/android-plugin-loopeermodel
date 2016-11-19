@@ -21,9 +21,8 @@
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
-    <!-- uncomment to enable plugin in all products
+
     <depends>com.intellij.modules.lang</depends>
-    -->
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable instance="com.loopeer.android.plugin.loopeermodel.Settings"/>
@@ -31,7 +30,9 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="loopeermodel.MainAction" class="com.loopeer.android.plugin.loopeermodel.MainAction" text="Loopeer Model"
+        <action id="loopeermodel.MainAction"
+                class="com.loopeer.android.plugin.loopeermodel.MainAction"
+                text="Loopeer Model"
                 description="format loopeer data dictionary">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt L"/>
