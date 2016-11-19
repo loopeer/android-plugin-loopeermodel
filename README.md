@@ -19,10 +19,13 @@ eg.
  front_image：正面照片
  inhand_image：手持照片
 ```
-####Screenshot
-![](/screenshot/screen-shot-1.png)
-![](/screenshot/screen-shot-2.png)
-![](/screenshot/screen-shot-3.png)
+####Usage
+1.control/comand + n call generate , and choose Loopeer Model (hot key: alt + L).
+![](/screenshot/screen-shot-1.png)  
+2.paste data dictionary text into the edit box.
+3.press confirm.
+![](/screenshot/screen-shot-2.png)  
+![](/screenshot/screen-shot-3.png)  
 
 ####Todo-List
 - **features**
