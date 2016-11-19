@@ -18,11 +18,14 @@ eg.
  inhand_image：手持照片
 ```
 ####Screenshot
-![](/screenshot/generate_before.png)
-![](/screenshot/generate_after.png)
+![](/screenshot/screen-shot-1.png)
+![](/screenshot/screen-shot-2.png)
+![](/screenshot/screen-shot-3.png)
 
 ####Todo-List
 - **features**
+- [ ] loopeer图标
+- [ ] 自动导入annotations包
 - [ ] 如果类名存在，则自动生成类
 - [ ] 可编辑单独每个变量的各个属性
 - [ ] 自定义变量名规则
