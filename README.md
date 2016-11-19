@@ -20,12 +20,12 @@ eg.
  inhand_image：手持照片
 ```
 ####Usage
-1.control/comand + n call generate , and choose Loopeer Model (hot key: alt + L).
+1.control/comand + n call generate , and choose Loopeer Model (hot key: alt + L).  
 ![](/screenshot/screen-shot-1.png)  
-2.paste data dictionary text into the edit box.
-3.press confirm.
+2.paste data dictionary text into the edit box.  
 ![](/screenshot/screen-shot-2.png)  
-![](/screenshot/screen-shot-3.png)  
+![](/screenshot/screen-shot-3.png) 
+3.press confirm.  
 
 ####Todo-List
 - **features**
