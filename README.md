@@ -4,7 +4,7 @@ an Android Studio plugin for generating model using loopeer data dictionary.
 ###loopeer data dictionary:
 ####define a data struct as below:
 ```
- ClassName [classname]
+ ClassName [classname] // optional
  param1：note1
  param2：note2
  ...
@@ -20,16 +20,16 @@ eg.
  inhand_image：手持照片
 ```
 ####Usage
-#####1.control/comand + n call generate , and choose Loopeer Model (hot key: alt + L).  
+#####1.control/comand + n call Generate , and choose Loopeer Model (hot key: alt + L).  
 ![](/screenshot/screen-shot-1.png)  
 #####2.paste data dictionary text into the edit box.  
 ![](/screenshot/screen-shot-2.png)  
-#####3.press confirm.  
+#####3.press Confirm.  
 ![](/screenshot/screen-shot-3.png)  
 
 ####Todo-List
 - **features**
-- [ ] loopeer图标
+- [ ] loopeer icon
 - [ ] 自动导入annotations包
 - [ ] 如果类名存在，则自动生成类
 - [ ] 可编辑单独每个变量的各个属性
