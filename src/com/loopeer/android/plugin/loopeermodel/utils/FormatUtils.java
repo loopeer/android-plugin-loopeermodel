@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 public final class FormatUtils {
 
-    private static final String HEADER_REGEX = ".*\\s\\[.*\\]";
+    public static final String LINE_REGEX = "\\*\\s\\w+：.*|\\w+：.*";
 
+    public static final String HEADER_REGEX = "(###)\\s\\w+\\s\\[.+\\]|\\w+\\s\\[.+\\]";
 
     public static ArrayList<VariableEntity> generateContent(String content) {
         content = formatContent(content);
@@ -87,8 +88,7 @@ public final class FormatUtils {
     }
 
     private static boolean isLineValid(String line) {
-        line = line.trim();
-        return line.contains("：") && line.split("：").length == 2;
+        return line.trim().matches(LINE_REGEX);
     }
 
     private static String trimContent(String content) {
