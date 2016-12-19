@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>loopeer</id>
     <name>Loopeer Model Format</name>
-    <version>0.1</version>
+    <version>0.2</version>
     <vendor email="liuzizhang@loopeer.com" url="https://github.com/loopeer/android-plugin-loopeermodel">loopeer</vendor>
 
     <description><![CDATA[
@@ -12,6 +12,11 @@
        <b>0.1</b> (11/18/2016)
        <ul>
         <li>Initial release</li>
+       </ul>
+       <b>0.2</b> (12/19/2016)
+       <ul>
+        <li>兼容英文冒号</li>
+        <li>正则表达式验证数据合法性</li>
        </ul>
     ]]>
     </change-notes>
