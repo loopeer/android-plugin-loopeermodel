@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public final class FormatUtils {
 
-    public static final String LINE_REGEX = "\\*\\s\\w+：.*|\\w+：.*";
+    public static final String LINE_REGEX = "\\*\\s\\w+[：:].*|\\w+[：:].*";
 
     public static final String HEADER_REGEX = "(###)\\s\\w+\\s\\[.+\\]|\\w+\\s\\[.+\\]";
 
@@ -28,6 +28,7 @@ public final class FormatUtils {
         VariableEntity entity = new VariableEntity();
         line = line.replace("*", "").trim();
         String[] s = line.split("：");
+        if(s.length == 1) s = line.split(":");
         boolean isFormat = s[0].equals(formatVariable(s[0]));
         if (!isFormat) {
             entity.isSerialized = true;
