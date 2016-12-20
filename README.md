@@ -11,9 +11,9 @@ an Android Studio plugin for generating model using loopeer data dictionary.
  ...
  ...
 ```
-notice:
-**for header** should pass the regular expression **'(###)\s\w+\s\[.+\]|\w+\s\[.+\]'**
-**for each line** should pass the regular expression **'\*\s\w+[：:].*|\w+[：:].*'**
+####notice:
+1.**for header** should pass the regular expression **'(###)\s\w+\s\[.+\]|\w+\s\[.+\]'**  
+2.**for each line** should pass the regular expression **'\*\s\w+[：:].*|\w+[：:].*'**  
 
 eg.
 
