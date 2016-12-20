@@ -3,13 +3,18 @@ an Android Studio plugin for generating model using loopeer data dictionary.
 
 ###loopeer data dictionary:
 ####define a data struct as below:
+
 ```
- ClassName [classname] // optional
+ ClassName [note] // optional
  param1：note1
  param2：note2
  ...
  ...
 ```
+notice:
+**for header** should pass the regular expression **'(###)\s\w+\s\[.+\]|\w+\s\[.+\]'**
+**for each line** should pass the regular expression **'\*\s\w+[：:].*|\w+[：:].*'**
+
 eg.
 
 ```
@@ -35,4 +40,4 @@ eg.
 - [ ] 可编辑单独每个变量的各个属性
 - [ ] 自定义变量名规则
 - **optimize**
-- [ ] 用正则表达式优化数据合法性检验
+- [x] 用正则表达式优化数据合法性检验
